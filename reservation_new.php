@@ -30,8 +30,8 @@ if (isset($_GET['check_in'])) {
 	$a = $_GET['r_date'];
 	$check_out = date('Y-m-d',strtotime("+1day $a"));
 	
-	$adult = '';
-	$children = '';
+	$adult = '1';
+	$children = '0';
 	$memo = '';
 }
 
