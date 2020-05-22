@@ -47,6 +47,8 @@ foreach($stmt as $row) {
 </title>
 <body>
 
+<h1>宿泊予約管理システム</h1>
+
 <table>
 <tr>
 <td valign="top">
