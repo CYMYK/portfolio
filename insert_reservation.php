@@ -12,7 +12,7 @@ $err_check_out = false;
 $err_flg = false;
 //エラーチェック
 if ($_POST['guest_id'] == "") {
-	$err_msg .= 'ゲストが選択されていません<br>';
+	$err_msg .= 'ゲストデータが挿入されていません<br>ゲストを選択し、挿入ボタンを押してください';
 	$err_flg = true;
 }
 

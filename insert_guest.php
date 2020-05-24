@@ -54,7 +54,7 @@ switch($_POST['button']) {
 	break;
 	
 	case $_POST['button'] == '更新' and $err_flg == false;
-	//削除
+	//更新
 	$sql = 'UPDATE guest SET name = :name,address = :address,tel = :tel,memo = :memo WHERE guest_id = :guest_id';
 	$stmt = $db->prepare($sql);
 
@@ -76,6 +76,15 @@ switch($_POST['button']) {
 	$stmt -> bindValue(':guest_id',$_POST['guest_id']);
 	
 	$stmt -> execute();
+	
+	//削除したゲストの予約データも同時に削除する
+	$sql = 'DELETE FROM reservation WHERE guest_id = :guest_id';
+	$stmt = $db->prepare($sql);
+	
+	$stmt -> bindValue(':guest_id',$_POST['guest_id']);
+	
+	$stmt -> execute();
+	
 	$err_msg = '完了しました<br>';
 	break;
 }
